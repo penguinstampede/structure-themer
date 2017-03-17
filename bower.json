@@ -1,0 +1,19 @@
+{
+  "name": "penguinstampede-themer",
+  "description": "Provide settings to receive a compiled CSS framework file just for you.",
+  "authors": [
+    "Erin K <erin@penguinstampede.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.3.1"
+  }
+}
