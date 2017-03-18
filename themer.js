@@ -87,3 +87,5 @@ themer.use('/v1', router);
 // =============================================================================
 themer.listen(port);
 console.log('Get to theming on port ' + port);
+
+module.exports = themer;
