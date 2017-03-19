@@ -72,7 +72,7 @@ router.route('/scss')
           outputStyle: 'compressed'
         }, function(err, result){
           if(err){
-            res.send(err);
+            res.status(503).send(err);
           } else {
             res.json({ css: result.css.toString() });
           }
