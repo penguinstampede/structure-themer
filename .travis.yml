@@ -2,6 +2,9 @@ language: node_js
 sudo: false
 node_js:
   - 7.7.3
+addons:
+  ssh_known_hosts:
+    - themer.penguinstampede.com
 cache:
   directories:
     - bower_components
