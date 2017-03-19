@@ -1,23 +1,22 @@
 language: node_js
 sudo: false
 node_js:
-- 7.7.3
+  - 7.7.3
 cache:
   directories:
-  - bower_components
+    - bower_components
 env:
   global:
-  - TZ=America/Los Angeles
-  - secure: H/Ozmfkjb0RQyWETQ/ctgaHqW7dusKHfJOOc3lZzbM8aSuwz/1wtd5bbDBDLIj6pA1koYezFRuWQndzSSh8y4oOaKNGKe63yXtbeXtBZ745r3t1PG/oDncjjZ/eifKQ2K4Y6X2xDbIQSDWfo9dLBXEGNPaBd5F/eFgEL0KELJ4CeJNEZUzeAIjUQ7hR+v7dtn9MJ1pPx5U0j/FtxfuAxqSkomIISzMdYCT3Rrk/Z7NDBb78gIWsYr83ot3JU4HKHLWcFo5QptbWMT6nVMnJlS+f3bI4jg3JTvtjdv52Y0utYM2JMR4kLwIPBrX0gP59ZRPPG+LxH3UMxaABcY5YGaaaFov7f15Cs3AkaYIG7iUgVUr/Nt7R8qZgYJtRIxmf0ivFwl7HaT2pF9fORIJWXxUoOd7u+MyqaBP7gAZHRovUdn13adaC+NSWfvX/nDRhtVmhYYCETwaJwKYs1+CwehYVJfEC1w7/IBvkmG2IAbeaC/S+ixRyCYiG29PJPn4hNk3cZ5ZLAypCbY5vxH1ST2JHanzIG3+41cA+CHeQp2g1WChV94rLGZcMnkz7bBn6t4Wa3tcPeY+5Z2bYzt7NVi4Ruig7wb60SQDmPEhA3dT9a31F9+d/g85HyU5BD02iYhQXs5DBgTQX9w0MIXTYSunSPtfbc2vLPWmGP6c2voB8=
+    - TZ=America/Los Angeles
+    - secure: H/Ozmfkjb0RQyWETQ/ctgaHqW7dusKHfJOOc3lZzbM8aSuwz/1wtd5bbDBDLIj6pA1koYezFRuWQndzSSh8y4oOaKNGKe63yXtbeXtBZ745r3t1PG/oDncjjZ/eifKQ2K4Y6X2xDbIQSDWfo9dLBXEGNPaBd5F/eFgEL0KELJ4CeJNEZUzeAIjUQ7hR+v7dtn9MJ1pPx5U0j/FtxfuAxqSkomIISzMdYCT3Rrk/Z7NDBb78gIWsYr83ot3JU4HKHLWcFo5QptbWMT6nVMnJlS+f3bI4jg3JTvtjdv52Y0utYM2JMR4kLwIPBrX0gP59ZRPPG+LxH3UMxaABcY5YGaaaFov7f15Cs3AkaYIG7iUgVUr/Nt7R8qZgYJtRIxmf0ivFwl7HaT2pF9fORIJWXxUoOd7u+MyqaBP7gAZHRovUdn13adaC+NSWfvX/nDRhtVmhYYCETwaJwKYs1+CwehYVJfEC1w7/IBvkmG2IAbeaC/S+ixRyCYiG29PJPn4hNk3cZ5ZLAypCbY5vxH1ST2JHanzIG3+41cA+CHeQp2g1WChV94rLGZcMnkz7bBn6t4Wa3tcPeY+5Z2bYzt7NVi4Ruig7wb60SQDmPEhA3dT9a31F9+d/g85HyU5BD02iYhQXs5DBgTQX9w0MIXTYSunSPtfbc2vLPWmGP6c2voB8=
 install: npm install
 script:
-- npm install -g grunt-cli bower shipit-cli
-- bower install
-- npm test
-- npm prune --production
-- openssl aes-256-cbc -k $PENGTHEME_DEPLOY -in config/${TRAVIS_BRANCH}_deploy_enc_travis
-  -d -a -out config/deploy_id_rsa
-- shipit $TRAVIS_BRANCH deploy
+  - npm install -g grunt-cli bower shipit-cli
+  - bower install
+  - npm test
+  - npm prune --production
+  - "openssl aes-256-cbc -k $PENGTHEME_DEPLOY -in config/${TRAVIS_BRANCH}_deploy_enc_travis -d -a -out config/deploy_id_rsa"
+  - "shipit $TRAVIS_BRANCH deploy"
 branches:
   only:
-  - master
+    - master
