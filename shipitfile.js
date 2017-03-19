@@ -12,6 +12,8 @@ module.exports = function (shipit) {
       deleteOnRollback: false,
       key: 'config/deploy_id_rsa',
       shallowClone: true
+    },
+    master: {
       servers: 'pinguino@themer.penguinstampede.com'
     }
   });
