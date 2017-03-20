@@ -46,7 +46,14 @@ router.route('/scss')
         secondary_color: ((req.body.secondary_color) ? req.body.secondary_color : '#767676'),
         success_color: ((req.body.success_color) ? req.body.success_color : '#3adb76'),
         warning_color: ((req.body.warning_color) ? req.body.warning_color : '#ffae00'),
-        alert_color: ((req.body.alert_color) ? req.body.alert_color : '#cc4b37')
+        alert_color: ((req.body.alert_color) ? req.body.alert_color : '#cc4b37'),
+        ltgray_color: ((req.body.ltgray_color) ? req.body.ltgray_color : '#e6e6e6'),
+        mdgray_color: ((req.body.mdgray_color) ? req.body.mdgray_color : '#cacaca'),
+        dkgray_color: ((req.body.dkgray_color) ? req.body.dkgray_color : '#8a8a8a'),
+        black_color: ((req.body.black_color) ? req.body.black_color : '#0a0a0a'),
+        white_color: ((req.body.white_color) ? req.body.white_color : '#fefefe'),
+        body_font: ((req.body.body_font) ? req.body.body_font : '"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif'),
+        headline_font: ((req.body.headline_font) ? req.body.headline_font : '"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif')
       }
 
       fs.readFileAsync(__dirname + '/inc/settings.scss.mst')
