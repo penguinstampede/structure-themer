@@ -15,7 +15,7 @@ env:
 install: npm install
 script:
   - npm install -g bower shipit-cli
-  - bower install
+  - bower install --force
   - npm test
   - npm prune --production
   - "openssl aes-256-cbc -k $PENGTHEME_DEPLOY -in config/${TRAVIS_BRANCH}_deploy_enc_travis -d -a -out config/deploy_id_rsa"
