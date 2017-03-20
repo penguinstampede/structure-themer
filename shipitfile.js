@@ -10,7 +10,7 @@ module.exports = function (shipit) {
       keepReleases: 2,
       ignores: ['.git','config','test','node_modules','bower_components'],
       deleteOnRollback: false,
-      key: 'config/deploy_id_rs',
+      key: 'config/deploy_id_rsa',
       shallowClone: true
     },
     master: {
