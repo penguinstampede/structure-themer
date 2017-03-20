@@ -57,7 +57,7 @@ router.route('/scss')
 
       function render_settings(data) {
         var settings_scss = Mustache.render(data.toString(), settings_data);
-        fs.writeFileAsync(__dirname + '/inc/_settings.scss', settings_scss)
+        fs.writeFileAsync('/tmp/_settings.scss', settings_scss)
         .then(function(){ generate_css() })
         .catch(function(err) {
           res.send(err);
@@ -68,13 +68,14 @@ router.route('/scss')
         //now we sass
         sass.render({
           file: __dirname + '/inc/base.scss',
-          includePaths: [__dirname + '/inc/',__dirname + '/bower_components/foundation-sites/scss/'],
+          includePaths: ['/tmp/',__dirname + '/bower_components/foundation-sites/scss/'],
           outputStyle: 'compressed'
         }, function(err, result){
           if(err){
             res.status(503).send(err);
           } else {
             res.json({ css: result.css.toString() });
+            fs.unlinkAsync('/tmp/_settings.scss');
           }
         });
       }
