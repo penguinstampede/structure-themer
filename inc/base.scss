@@ -47,7 +47,7 @@
   //@include foundation-tooltip;
   @include foundation-top-bar;
   //@include foundation-visibility-classes;
-  //@include foundation-float-classes;
+  @include foundation-float-classes;
 
   @if $flex {
     @include foundation-flex-classes;
